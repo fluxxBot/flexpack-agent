@@ -11,7 +11,7 @@ Package manager name.
 ## Procedure
 
 ### Step 1: Check known paths
-Read `.claude/skills/find-package-cache-on-macos/references/macos-cache-paths.md`.
+Read `.claude/references/cache/macos-cache-paths.md`.
 
 ### Step 2: For unknown PMs
 1. Check env var: `echo $<PM_CACHE_VAR>`
@@ -24,7 +24,7 @@ Run `ls <path>` to confirm it exists and contains files.
 If empty, report that install hasn't been run.
 
 ### Step 4: Identify file patterns
-Check `.claude/skills/pm-buildinfo-references/references/version-format-quirks.md` for version prefix rules.
+Check `.claude/references/shared/version-format-quirks.md` for version prefix rules.
 List sample files to confirm extension and naming.
 
 ## Output

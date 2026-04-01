@@ -11,7 +11,7 @@ user-invocable: false
 - PM name, lock file format, lock file struct definition
 
 ## Procedure
-1. Load `references/lockfile-resolver-template.md`
+1. Load `.claude/references/templates/lockfile-resolver-template.md`
 2. Map lock entries → DependencyInfo (ID, Name, Version, Type, Scopes)
 3. Handle: deduplication, skip-self, optional/dev sections, malformed entries
 

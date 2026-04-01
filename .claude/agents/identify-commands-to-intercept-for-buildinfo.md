@@ -13,8 +13,8 @@ Package manager name.
 ## Procedure
 
 ### Step 1: Check known PMs
-Read `.claude/skills/identify-commands-to-intercept-for-buildinfo/references/install-command-matrix.md`.
-Read `.claude/skills/identify-commands-to-intercept-for-buildinfo/references/publish-command-matrix.md`.
+Read `.claude/references/decision/install-command-matrix.md`.
+Read `.claude/references/decision/publish-command-matrix.md`.
 If listed, return documented commands.
 
 ### Step 2: Discover (unknown PMs only)

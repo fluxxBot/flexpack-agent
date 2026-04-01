@@ -15,11 +15,11 @@ user-invocable: false
 ## Procedure
 
 ### Step 1: Look up known struct definitions
-Read `.claude/skills/pm-buildinfo-references/references/manifest-and-lockfile-field-maps.md`.
+Read `.claude/references/shared/manifest-and-lockfile-field-maps.md`.
 If the PM is listed, use pre-built Go struct definitions directly.
 
 ### Step 2: For unknown PMs — discover fields
-Follow `references/field-discovery-procedure.md`.
+Follow `.claude/references/setup/field-discovery-procedure.md`.
 
 ### Step 3: Select parsing pattern by format
 - TOML → `github.com/BurntSushi/toml` with `toml:"field"` tags

@@ -14,19 +14,19 @@ user-invocable: false
 ## Procedure
 
 ### Step 1: Read priority chain
-Read `references/checksum-source-priority-chain.md`.
+Read `.claude/references/decision/checksum-source-priority-chain.md`.
 
 ### Step 2: Configure based on architecture
 
 **If FlexPack (local files):**
 - Priority: local cache files → lockfile checksums → manifest-based → empty
 - Read cache file extension and pattern from cache location skill output
-- Read `.claude/skills/pm-buildinfo-references/references/version-format-quirks.md` for version handling
+- Read `.claude/references/shared/version-format-quirks.md` for version handling
 
 **If Non-FlexPack (server-side):**
 - Priority: build-cache (Tier 1) → batched AQL (Tier 2) → empty
-- Read `references/aql-query-patterns.md` for query format
-- Read `references/build-cache-reuse-pattern.md` for Tier 1 caching
+- Read `.claude/references/decision/aql-query-patterns.md` for query format
+- Read `.claude/references/decision/build-cache-reuse-pattern.md` for Tier 1 caching
 - Configure: batch_size=30, worker_count=15
 
 ### Step 3: Always ensure graceful degradation

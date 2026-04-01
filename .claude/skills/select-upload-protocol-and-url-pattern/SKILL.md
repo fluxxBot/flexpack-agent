@@ -13,7 +13,7 @@ user-invocable: false
 ## Procedure
 
 ### Step 1: Look up PM
-Read `references/upload-protocol-matrix.md` and `references/url-pattern-catalog.md`.
+Read `.claude/references/decision/upload-protocol-matrix.md` and `.claude/references/decision/url-pattern-catalog.md`.
 
 ### Step 2: For unknown PMs
 WebSearch: `"<PM name> registry upload API"` and `"<PM name> artifactory integration"`

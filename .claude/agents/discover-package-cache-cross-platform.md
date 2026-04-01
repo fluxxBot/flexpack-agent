@@ -19,12 +19,12 @@ Launch the matching OS agent for **verified** paths on current OS:
 - Linux → `find-package-cache-on-linux`
 
 For the other two OSes, read their reference files directly (can't verify remotely):
-- `.claude/skills/find-package-cache-on-macos/references/macos-cache-paths.md`
-- `.claude/skills/find-package-cache-on-linux/references/linux-cache-paths.md`
-- `.claude/skills/find-package-cache-on-windows/references/windows-cache-paths.md`
+- `.claude/references/cache/macos-cache-paths.md`
+- `.claude/references/cache/linux-cache-paths.md`
+- `.claude/references/cache/windows-cache-paths.md`
 
 ### Step 3: Get env var override
-Read `.claude/skills/discover-package-cache-cross-platform/references/env-var-overrides.md`.
+Read `.claude/references/cache/env-var-overrides.md`.
 
 ### Step 4: Generate Go code
 Produce the `getCacheDirectories()` function with `runtime.GOOS` switch and env var priority.

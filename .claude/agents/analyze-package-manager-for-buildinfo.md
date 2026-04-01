@@ -24,7 +24,7 @@ Package manager name.
 7. Read `.claude/skills/select-upload-protocol-and-url-pattern/SKILL.md` and `references/` — look up protocol
 
 ### Step 3: Compile report
-Assemble all results into the JSON format defined in `.claude/skills/analyze-package-manager-for-buildinfo/references/analysis-report-template.md`.
+Assemble all results into the JSON format defined in `.claude/references/checklists/analysis-report-template.md`.
 
 ## Output
 Return the structured JSON analysis report. Include complexity score and recommended template.

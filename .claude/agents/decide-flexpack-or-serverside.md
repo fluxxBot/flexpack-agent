@@ -13,7 +13,7 @@ Package manager name.
 ## Procedure
 
 ### Step 1: Check known PMs
-Read `.claude/skills/pm-buildinfo-references/references/cross-pm-comparison-table.md`.
+Read `.claude/references/shared/cross-pm-comparison-table.md`.
 If the PM is listed, return its architecture immediately.
 
 ### Step 2: Investigate (unknown PMs only)
@@ -25,8 +25,8 @@ If the PM is listed, return its architecture immediately.
 6. Inspect the cache directory: `ls <discovered-path>`
 
 ### Step 3: Apply decision
-Read `.claude/skills/decide-flexpack-or-serverside/references/local-archive-indicators.md`.
-Read `.claude/skills/decide-flexpack-or-serverside/references/content-addressable-indicators.md`.
+Read `.claude/references/decision/local-archive-indicators.md`.
+Read `.claude/references/decision/content-addressable-indicators.md`.
 
 - Found `.tgz`, `.whl`, `.jar`, `.crate`, `.gem`, `.zip` → **FlexPack**
 - Found content-addressable store / hash-named files → **Non-FlexPack**

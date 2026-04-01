@@ -12,7 +12,7 @@ Package manager name.
 Same as macOS agent but uses Linux-specific paths.
 
 ### Step 1: Check known paths
-Read `.claude/skills/find-package-cache-on-linux/references/linux-cache-paths.md`.
+Read `.claude/references/cache/linux-cache-paths.md`.
 
 ### Step 2: For unknown PMs
 1. Check env var override

@@ -11,8 +11,8 @@ user-invocable: false
 - PM name, architecture (flexpack/non-flexpack)
 
 ## Procedure
-1. Load `references/install-buildinfo-template.md`
-2. FlexPack: wire into FlexPackManager interface, reference `.claude/skills/pm-buildinfo-references/references/flexpack-interface-contract.md`
+1. Load `.claude/references/templates/install-buildinfo-template.md`
+2. FlexPack: wire into FlexPackManager interface, reference `.claude/references/shared/flexpack-interface-contract.md`
 3. Non-FlexPack: standalone handler with server checksums
 4. Generate module creation, dependency assembly, SaveBuildInfo call
 

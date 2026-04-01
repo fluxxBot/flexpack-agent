@@ -14,11 +14,11 @@ Package manager name.
 Run: `which <pm>` and `<pm> --version`
 
 ### Step 2: If installed
-Read `.claude/skills/verify-and-install-package-manager-cli/references/pm-install-commands.md`.
+Read `.claude/references/setup/pm-install-commands.md`.
 Verify version meets minimum requirements.
 
 ### Step 3: If NOT installed
-1. Look up install command in `references/pm-install-commands.md`
+1. Look up install command in `.claude/references/setup/pm-install-commands.md`
 2. If not in reference: WebSearch `"install <PM name> on <current-OS>"`
 3. Run the official install command
 4. Verify: `<pm> --version`

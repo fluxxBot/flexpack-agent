@@ -13,7 +13,7 @@ user-invocable: false
 ## Procedure
 
 ### Step 1: Look up PM in reference
-Read `references/auth-config-matrix.md`. If found, return documented auth pattern.
+Read `.claude/references/decision/auth-config-matrix.md`. If found, return documented auth pattern.
 
 ### Step 2: For unknown PMs
 WebSearch: `"<PM name> authentication configuration"` and `"<PM name> private registry setup"`

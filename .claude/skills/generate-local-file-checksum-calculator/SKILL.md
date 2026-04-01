@@ -11,9 +11,9 @@ user-invocable: false
 - PM name, cache paths, file pattern, file extension
 
 ## Procedure
-1. Generate package file search from `references/cache-search-optimization.md` (hybrid: direct path O(1) then recursive walk)
-2. Generate single-file checksum from `references/single-file-checksum-template.md` (crypto.GetFileDetails)
-3. Apply version format handling from `.claude/skills/pm-buildinfo-references/references/version-format-quirks.md`
+1. Generate package file search from `.claude/references/templates/cache-search-optimization.md` (hybrid: direct path O(1) then recursive walk)
+2. Generate single-file checksum from `.claude/references/templates/single-file-checksum-template.md` (crypto.GetFileDetails)
+3. Apply version format handling from `.claude/references/shared/version-format-quirks.md`
 4. Wire into CalculateChecksum() interface method
 
 ## Output

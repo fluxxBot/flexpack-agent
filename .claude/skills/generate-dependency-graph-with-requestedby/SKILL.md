@@ -11,9 +11,9 @@ user-invocable: false
 - PM name, resolution strategy
 
 ## Procedure
-1. Select graph representation from `references/graph-construction-patterns.md` (adjacency list default)
+1. Select graph representation from `.claude/references/templates/graph-construction-patterns.md` (adjacency list default)
 2. Select construction: top-down (from CLI tree output) or bottom-up (from lock file)
-3. Generate RequestedBy inversion from `references/graph-inversion-for-requestedby.md`
+3. Generate RequestedBy inversion from `.claude/references/templates/graph-inversion-for-requestedby.md`
 4. Add cycle detection and diamond dependency deduplication
 
 ## Output

@@ -21,9 +21,9 @@ ls jfrog-cli-artifactory/artifactory/commands/flexpack/
 Note the naming patterns (struct names, file names, package names).
 
 ### Step 2: Read templates
-Read `.claude/skills/create-flexpack-implementation-structure/references/flexpack-file-layout.md` for structure.
-Read `.claude/skills/create-flexpack-implementation-structure/references/flexpack-boilerplate.md` for Go boilerplate.
-Read `.claude/skills/pm-buildinfo-references/references/flexpack-interface-contract.md` for the interface.
+Read `.claude/references/templates/flexpack-file-layout.md` for structure.
+Read `.claude/references/templates/flexpack-boilerplate.md` for Go boilerplate.
+Read `.claude/references/shared/flexpack-interface-contract.md` for the interface.
 
 ### Step 3: Determine simple vs complex
 - Simple PM (like Poetry, Cargo, Helm): single file `{pm}_flexpack.go`

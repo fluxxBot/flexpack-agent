@@ -11,9 +11,9 @@ user-invocable: false
 - PM name, upload protocol, artifact format
 
 ## Procedure
-1. Load `references/publish-buildinfo-template.md`
+1. Load `.claude/references/templates/publish-buildinfo-template.md`
 2. Generate artifact tracking (checksums on built artifacts, repo path construction)
-3. Generate build property tagging from `references/artifact-property-tagging.md`
+3. Generate build property tagging from `.claude/references/templates/artifact-property-tagging.md`
 4. Generate merge logic (publish artifacts + install dependencies → single BuildInfo)
 
 ## Output

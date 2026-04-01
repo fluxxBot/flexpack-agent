@@ -12,7 +12,7 @@ Package manager name.
 Same as macOS/Linux agents but with Windows paths.
 
 ### Step 1: Check known paths
-Read `.claude/skills/find-package-cache-on-windows/references/windows-cache-paths.md`.
+Read `.claude/references/cache/windows-cache-paths.md`.
 
 ### Step 2: For unknown PMs
 1. Check env var override

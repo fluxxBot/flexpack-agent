@@ -11,9 +11,9 @@ user-invocable: false
 - PM name, CLI command, output format (json/text-tree)
 
 ## Procedure
-1. Load `references/cli-resolver-template.md`
+1. Load `.claude/references/templates/cli-resolver-template.md`
 2. If JSON → direct unmarshal, recursive walk with dedup
-3. If text tree → indentation parser from `references/cli-output-parsing-patterns.md`
+3. If text tree → indentation parser from `.claude/references/templates/cli-output-parsing-patterns.md`
 4. Generate: `resolveWithCLI()`, `parseCliOutput()`, timeout handling, scope extraction
 
 ## Output

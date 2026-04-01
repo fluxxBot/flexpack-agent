@@ -11,9 +11,9 @@ user-invocable: false
 - Package manager name
 
 ## Procedure
-1. Look up PM in `references/scope-type-catalog.md`
+1. Look up PM in `.claude/references/scopes/scope-type-catalog.md`
 2. Select pattern: manifest-based (most PMs), context-based (Conan), configuration-based (Gradle/Maven)
-3. Apply inheritance rules from `references/scope-inheritance-rules.md`
+3. Apply inheritance rules from `.claude/references/scopes/scope-inheritance-rules.md`
 4. Generate `determineScopes()` and `CalculateScopes()` methods
 
 ## Output

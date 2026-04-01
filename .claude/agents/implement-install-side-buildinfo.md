@@ -15,7 +15,7 @@ You are an autonomous code generation agent. You receive analysis results and pr
 
 ### Step 1: Generate Parser
 Read `.claude/skills/generate-manifest-and-lockfile-parser/SKILL.md` and its `references/`.
-Read `.claude/skills/pm-buildinfo-references/references/manifest-and-lockfile-field-maps.md`.
+Read `.claude/references/shared/manifest-and-lockfile-field-maps.md`.
 Generate Go struct definitions and load functions for the PM's manifest and lock file.
 
 ### Step 2: Generate Resolver
@@ -47,7 +47,7 @@ Based on architecture, launch ONE agent:
 Assemble all generated code into the scaffolded files.
 
 ### Step 8: Apply Gotchas
-Read `.claude/skills/pm-buildinfo-references/references/known-pm-gotchas.md`. Add PM-specific warnings as comments.
+Read `.claude/references/shared/known-pm-gotchas.md`. Add PM-specific warnings as comments.
 
 ## Output
 List of files created with full paths.

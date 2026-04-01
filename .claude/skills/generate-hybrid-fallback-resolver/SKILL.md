@@ -11,7 +11,7 @@ user-invocable: false
 - PM name, CLI command, lock file struct
 
 ## Procedure
-1. Load `references/hybrid-resolver-template.md`
+1. Load `.claude/references/templates/hybrid-resolver-template.md`
 2. Generate three-strategy pattern: lock+manifest → CLI → file-only fallback
 3. Include logging at each strategy transition
 

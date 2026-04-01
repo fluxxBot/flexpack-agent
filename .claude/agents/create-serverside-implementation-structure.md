@@ -20,8 +20,8 @@ ls jfrog-cli-artifactory/artifactory/commands/ocicontainer/
 Note file naming, package structure, import patterns.
 
 ### Step 2: Read templates
-Read `.claude/skills/create-serverside-implementation-structure/references/serverside-file-layout.md`.
-Read `.claude/skills/create-serverside-implementation-structure/references/serverside-boilerplate.md`.
+Read `.claude/references/templates/serverside-file-layout.md`.
+Read `.claude/references/templates/serverside-boilerplate.md`.
 
 ### Step 3: Create files
 Create ONLY in `jfrog-cli-artifactory/artifactory/commands/{pm}/`:

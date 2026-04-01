@@ -13,10 +13,10 @@ user-invocable: false
 ## Procedure
 
 ### Step 1: Check lock file availability
-Read `references/lockfile-formats-catalog.md`. Does the PM produce a lock file?
+Read `.claude/references/decision/lockfile-formats-catalog.md`. Does the PM produce a lock file?
 
 ### Step 2: Check CLI tree command availability
-Read `references/cli-resolution-commands.md`. Does the PM have a CLI tree command?
+Read `.claude/references/decision/cli-resolution-commands.md`. Does the PM have a CLI tree command?
 
 ### Step 3: Apply decision matrix
 - Has lock file + has CLI → **hybrid** (prefer CLI for rich data, lock file as fallback)
@@ -25,7 +25,7 @@ Read `references/cli-resolution-commands.md`. Does the PM have a CLI tree comman
 - Neither → WebSearch for `"<PM name> dependency resolution"`
 
 ### Step 4: Determine manifest format
-Read `.claude/skills/pm-buildinfo-references/references/manifest-and-lockfile-field-maps.md` for struct definitions.
+Read `.claude/references/shared/manifest-and-lockfile-field-maps.md` for struct definitions.
 
 ## Output Format
 ```json

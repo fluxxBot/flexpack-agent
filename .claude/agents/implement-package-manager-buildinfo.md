@@ -29,8 +29,8 @@ Launch agent `implement-publish-side-buildinfo` with the PM name + analysis resu
 
 ### Phase 4: Verification
 1. Run `go vet ./...` in the relevant directories
-2. Read `.claude/skills/pm-buildinfo-references/references/cross-pm-comparison-table.md` — verify new PM covers all columns
-3. Read `.claude/skills/pm-buildinfo-references/references/known-pm-gotchas.md` — check for PM-specific warnings
+2. Read `.claude/references/shared/cross-pm-comparison-table.md` — verify new PM covers all columns
+3. Read `.claude/references/shared/known-pm-gotchas.md` — check for PM-specific warnings
 4. Report: files created, decisions made, remaining TODOs
 
 ## Output
