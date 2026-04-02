@@ -59,3 +59,36 @@
 - **Virtual repos without default deployment repo**: Cannot filter layers → returns empty results.
 - **Marker layers**: Only in remote repos. `.marker` suffix files require Docker API download for real checksums.
 - **Image name parsing complexity**: References arrive as `registry:port/repo/image:tag`, `image:tag`, `image@sha256:xxx`, etc.
+
+## General Implementation Gotchas (Learned from Nix Implementation)
+
+These apply to ANY new package manager, not just Nix. Discovered during real end-to-end testing.
+
+### Build Output Capture
+- **Never use `--no-link` for build commands when you need the result path later.** Let the PM create its default output symlink/file, then read that. Parsing `--print-out-paths` stdout is fragile — the output format can vary across PM versions.
+- **Always read the result symlink/path AFTER the build command completes.** The store/cache path must be the exact path that was just built, not a re-evaluated one.
+
+### Working Directory Resolution
+- **Always resolve relative working directories to absolute paths before any filesystem operations.** `filepath.Join(".", "result")` produces `"result"` which fails with `os.Readlink` if the Go process cwd isn't the project dir. Use `filepath.Abs()` or resolve `"."` to `os.Getwd()`.
+
+### Extra CLI Flags Pass-Through
+- **Extra flags (like `--extra-experimental-features`) must be passed to ALL PM subcommands, not just the build command.** If `nix build` needs `--extra-experimental-features nix-command`, then `nix path-info` and `nix store dump-path` need it too. Never assume a PM subcommand works without the same flags.
+
+### Checksum Completeness
+- **Artifactory expects sha1, sha256, AND md5.** If the PM only provides one hash natively (e.g., Nix provides NAR sha256), you must compute the others. Stream the artifact/archive through `sha1.New()`, `md5.New()` via `io.MultiWriter` to compute all hashes in a single pass.
+
+### Command Interface Compliance
+- **The `commands.Command` interface requires `Run()`, `ServerDetails()`, AND `CommandName()`.** Generated command structs often miss `ServerDetails()`. Always verify the full interface is implemented before wiring into the CLI.
+
+### CLI Registration
+- **Generated implementation code is useless without CLI registration.** The agent must also modify:
+  1. `jfrog-cli/utils/cliutils/commandsflags.go` — add constant + flags
+  2. `jfrog-cli/buildtools/cli.go` — add command definition + handler function + import
+  3. `jfrog-cli/docs/buildtools/<pm>command/help.go` — add help text
+- **When `SkipFlagParsing: true`**, the CLI context doesn't parse flags. Use `build.ExtractBuildDetailsFromArgs(args)` to extract `--build-name`, `--build-number`, `--project` from raw args.
+
+### Source Impurity in Content-Addressed PMs
+- **If the PM uses `src = ./.` or equivalent, the build output symlink/file changes the source hash on subsequent builds.** Filter build artifacts from the source (e.g., Nix: filter `result` symlink from `src`). This causes "path is not valid" errors where the store path from build #1 doesn't exist when queried in build #2.
+
+### Binary Location
+- **The built `jf` binary must be the one you test with.** If there's a system-installed `jf` (e.g., via `jfvm` shim at `~/.jfvm/shim/jf`), it shadows your locally built binary. Always use the full path (`../jfrog-cli/jf`) or verify with `which jf`.

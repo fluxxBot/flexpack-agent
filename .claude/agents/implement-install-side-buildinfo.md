@@ -47,7 +47,28 @@ Based on architecture, launch ONE agent:
 Assemble all generated code into the scaffolded files.
 
 ### Step 8: Apply Gotchas
-Read `.claude/references/shared/known-pm-gotchas.md`. Add PM-specific warnings as comments.
+Read `.claude/references/shared/known-pm-gotchas.md`. Apply BOTH PM-specific AND general gotchas.
+
+## Critical Code Generation Rules
+
+These rules are NON-NEGOTIABLE. Violations cause runtime failures.
+
+1. **Working directory**: Always resolve to absolute path at the start of `Run()`:
+   ```go
+   if wd == "" || wd == "." {
+       wd, _ = os.Getwd()
+   } else if !filepath.IsAbs(wd) {
+       wd, _ = filepath.Abs(wd)
+   }
+   ```
+
+2. **Extra CLI flags**: Pass `args` (user's extra flags) to ALL PM subcommands — build, path-info, store dump, etc. Never assume a subcommand works without the same flags the build command needed.
+
+3. **Build output capture**: Use the PM's default output mechanism (symlinks, result dirs). Read the symlink AFTER build completes. Do NOT parse stdout from `--print-out-paths` style flags.
+
+4. **Three checksums**: Always compute sha1 + sha256 + md5. If the PM only provides one natively, compute the others by streaming the artifact through `io.MultiWriter(sha1.New(), md5.New())`.
+
+5. **Command interface**: Every command struct MUST implement `Run()`, `ServerDetails()`, `CommandName()`. `ServerDetails()` can return `config.GetDefaultServerConf()` if not explicitly configured.
 
 ## Output
 List of files created with full paths.
